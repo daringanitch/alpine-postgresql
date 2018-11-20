@@ -12,8 +12,13 @@ if [ ! -d "$DB_BASE" ]; then
   exit 1
 fi
 
+if [ -z "$DB_HBA_TRUST_NETS" ]; then
+  DB_HBA_TRUST_NETS=100.0.0.0/8
+fi
+
+
 if [ -z "$DB_NAME" ]; then
-  DB_NAME=demo
+  DB_NAME=jiradb
 fi
 
 DB_PATH="$DB_BASE/$DB_NAME"
