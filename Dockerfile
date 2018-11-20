@@ -8,7 +8,8 @@ RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 
 COPY etc/ /etc/
 
-ENV DB_NAME=demo
+ENV DB_NAME=jiradb
+ENV DB_USER=jira
 
 EXPOSE 5432
 
